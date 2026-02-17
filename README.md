@@ -1,7 +1,7 @@
 
-# 🦆 Desafio Back End Java – Granja de Patos
+# 🦆 Desafio Back End Java – Preço Justo
 
-API REST desenvolvida em **Java com Spring Boot** para gerenciamento de uma granja de patos.
+API REST desenvolvida em **Java com Spring Boot** para gerenciamento de um sistema de venda de patos.
 O sistema permite cadastro de patos, clientes e vendedores, além do registro e controle de vendas.
 
 > ⚠️ Observação: A geração de relatórios em Excel e os relatorios de vendas/vendedores foram previstas na arquitetura, porém não foi implementada nesta versão.
