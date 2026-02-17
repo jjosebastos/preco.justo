@@ -62,4 +62,19 @@ public class GlobalHandler {
         );
         return ResponseEntity.status(status).body(err);
     }
+
+    @ExceptionHandler(PatosAlreadySoldException.class)
+    public ResponseEntity<StandardError> patoAlreadySoldException(PatosAlreadySoldException e,
+                                                                  HttpServletRequest request){
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+        String error = "Dados não encontrados";
+        StandardError err = new StandardError(
+                Instant.now(),
+                status.value(),
+                error,
+                e.getMessage(),
+                request.getRequestURI()
+        );
+        return ResponseEntity.status(status).body(err);
+    }
 }

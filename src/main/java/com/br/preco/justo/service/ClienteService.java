@@ -25,7 +25,7 @@ public class ClienteService {
     @Transactional
     public ClienteResponse save(ClienteDto dto){
         if(this.clienteRepository.existsByCpfNativo(dto.getCpf())){
-            throw new CpfAlreadyRegistered("CPF ja existente!s");
+            throw new CpfAlreadyRegistered("CPF ja existente!");
         }
         var cliente = this.dtoToCliente(dto);
         var saved = clienteRepository.save(cliente);
