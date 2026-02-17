@@ -6,7 +6,6 @@ import com.br.preco.justo.exception.ClienteNotFoundException;
 import com.br.preco.justo.exception.CpfAlreadyRegistered;
 import com.br.preco.justo.model.Cliente;
 import com.br.preco.justo.repository.ClienteRepository;
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -59,7 +58,7 @@ public class ClienteService {
 
     private Cliente getCliente(Long idCliente){
         return clienteRepository.findById(idCliente).orElseThrow
-                (() -> new ClienteNotFoundException("Cliente não encontrado"));
+                (() -> new ClienteNotFoundException(""));
     }
 
     private Cliente dtoToUpdate(ClienteDto dto, Cliente entity){

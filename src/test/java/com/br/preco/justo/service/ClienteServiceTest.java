@@ -28,7 +28,7 @@ public class ClienteServiceTest {
 
 
     @Test
-    public void shouldCreateUser() {
+    public void shouldCreateCliente() {
         ClienteDto dto = ClienteMock.createValidDto();
         Cliente entity = ClienteMock.createValidEntity();
         Mockito.when(repository.save(Mockito.any(Cliente.class))).thenReturn(entity);

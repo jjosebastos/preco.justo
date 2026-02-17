@@ -91,4 +91,22 @@ public class PatoServiceTest {
 
         Mockito.verify(repository, Mockito.never()).save(Mockito.any());
     }
+
+    @Test
+    void shouldFindDuck(){
+        Pato entity = PatoMock.createDuckWithMae();
+        Long id = 1L;
+
+        Mockito.when(repository.findById(id)).thenReturn(Optional.of(entity));
+        var found = service.findById(id);
+
+        Assertions.assertEquals(entity.getIdPato(), found.getIdPato());
+        Assertions.assertEquals(entity.getNome(), found.getNome());
+        Assertions.assertEquals(entity.getMae().getIdPato(), found.getIdMae());
+
+        Mockito.verify(repository, Mockito.times(1)).findById(Mockito.any());
+
+
+
+    }
 }
