@@ -27,7 +27,7 @@ public class Cliente {
     private Boolean flDesconto;
     @Column(nullable = false, unique = true, name = "nr_cpf")
     private String cpf;
-    @Column(nullable = false, updatable = false)
+    @Column(name = "dt_cadastro", updatable = false)
     private Instant dataCadastro;
 
 

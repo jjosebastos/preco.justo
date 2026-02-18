@@ -52,11 +52,11 @@ public class GlobalHandler {
     public ResponseEntity<StandardError> patoNotFoundException(PatoNotFoundException e,
                                                                 HttpServletRequest request){
         HttpStatus status = HttpStatus.NOT_FOUND;
-        String error = "Dados não encontrados";
+        String error = DataMessage.DATA_NOT_FOUND.getMessage();
         StandardError err = new StandardError(
                 Instant.now(),
                 status.value(),
-                error,
+                String.valueOf(error),
                 e.getMessage(),
                 request.getRequestURI()
         );
